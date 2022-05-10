@@ -1,0 +1,275 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Kumbh Sans", sans-serif;
+  margin: 40px 180px;
+}
+
+p {
+  font-size: 16px;
+}
+
+header .nav-mobile {
+  display: none;
+}
+
+header .nav-desktop {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 1px solid #e8e8ea;
+}
+
+header .nav-desktop :first-child {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 9%;
+  gap: 50px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .nav-desktop :first-child ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style-type: none;
+  gap: 30px;
+  color: #68707d;
+}
+
+header .nav-desktop :first-child ul li {
+  border-bottom: 2px solid white;
+  padding-bottom: 35px;
+  padding-top: 35px;
+}
+
+header .nav-desktop :first-child ul li:hover {
+  cursor: pointer;
+  cursor: hand;
+  border-bottom: 2px solid #ff7d1a;
+  padding-bottom: 35px;
+}
+
+header :last-child {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  gap: 50px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header :last-child #icon-cart {
+  cursor: pointer;
+  cursor: hand;
+}
+
+header :last-child #avatar {
+  height: 50px;
+  cursor: pointer;
+  cursor: hand;
+}
+
+header :last-child #avatar:hover {
+  border: 2px solid #ff7d1a;
+  border-radius: 50%;
+}
+
+main {
+  margin: 80px 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 130px;
+}
+
+main article {
+  -ms-flex-preferred-size: 40%;
+      flex-basis: 40%;
+}
+
+main article :first-child .produitBig {
+  width: 100%;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+main article :first-child #btnPrevious,
+main article :first-child #bntNext {
+  padding: 11px;
+  background-color: white;
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  position: absolute;
+}
+
+main article :first-child #btnPrevious {
+  z-index: 2;
+  top: 400px;
+  right: 1300px;
+}
+
+main article :first-child #bntNext {
+  top: 400px;
+  right: 920px;
+}
+
+main article :last-child {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+}
+
+main article :last-child .produitLittle {
+  width: 25%;
+}
+
+main article :last-child .produitLittle:hover {
+  cursor: pointer;
+  cursor: hand;
+}
+
+main article img {
+  border-radius: 5%;
+}
+
+main aside {
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+}
+
+main aside h2 {
+  color: #ff7d1a;
+  text-transform: uppercase;
+  font-size: 13px;
+  margin-top: 50px;
+}
+
+main aside h1 {
+  margin-top: 20px;
+}
+
+main aside p {
+  margin-top: 30px;
+}
+
+main aside #containerPrix div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 25px;
+  gap: 15px;
+}
+
+main aside #containerPrix div #prix {
+  font-size: 25px;
+  font-weight: 700;
+}
+
+main aside #containerPrix div #promo {
+  height: 20px;
+  background-color: #ffede0;
+  -ms-flex-item-align: initial;
+      -ms-grid-row-align: initial;
+      align-self: initial;
+  padding: 3px 7px 0 7px;
+  color: #ff7d1a;
+  font-size: 13px;
+  font-weight: 700;
+  border-radius: 5px;
+  margin-top: 4px;
+}
+
+main aside #containerPrix #prixOrig {
+  text-decoration: line-through;
+  color: #68707d;
+  padding-top: 10px;
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 700;
+  color: #b6bcc8;
+}
+
+main aside #containerQPrix {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 30px;
+  gap: 15px;
+}
+
+main aside #containerQPrix #containerQ {
+  background-color: #f7f8fd;
+  width: 20%;
+  gap: 10px;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+  font-weight: 700;
+}
+
+main aside #containerQPrix #containerQ #plus,
+main aside #containerQPrix #containerQ #minus {
+  width: 10%;
+  height: 10%;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+main aside #containerQPrix #containerQ #plus:hover,
+main aside #containerQPrix #containerQ #minus:hover {
+  cursor: pointer;
+  cursor: hand;
+}
+
+main aside #containerQPrix #containerQ #plus {
+  height: 30%;
+}
+
+main aside #containerQPrix #containerCart {
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  padding: 10px 60px;
+  background-color: #ff7d1a;
+  color: white;
+  -webkit-box-shadow: 1px 12px 29px -10px #ff7d1a;
+          box-shadow: 1px 12px 29px -10px #ff7d1a;
+}
+
+main aside #containerQPrix #containerCart #addCart {
+  display: inline-block;
+  border-radius: 5px;
+}
+/*# sourceMappingURL=style.css.map */

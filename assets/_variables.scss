@@ -1,0 +1,30 @@
+// ## Colors
+
+// ### Primary
+$range: hsl(26, 100%, 55%);
+$paleOrange: hsl(25, 100%, 94%);
+
+// ### Neutral
+$veryVarkBlue: hsl(220, 13%, 13%);
+$darkGrayishBlue: hsl(219, 9%, 45%);
+$grayishBlue: hsl(220, 14%, 75%);
+$lightGrayHr : #e8e8ea;
+$lightGrayishBlue: hsl(223, 64%, 98%);
+$white: hsl(0, 0%, 100%);
+//Black with 75% opacity for lightbox background
+$black: hsl(0, 0%, 0%);
+
+// ## Typography
+
+// ### Body 
+// paragraph
+$fontSizeP : 16px;
+$fontSizeSTitles : 13px;
+
+// ### Font
+// (https://fonts.google.com/specimen/Kumbh+Sans)
+$family: ('Kumbh Sans', sans-serif);
+$weightRegular: 400;
+$weightBold: 700;
+
+
