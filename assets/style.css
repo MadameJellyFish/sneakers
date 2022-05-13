@@ -5,11 +5,26 @@
 
 body {
   font-family: "Kumbh Sans", sans-serif;
-  margin: 40px 180px;
+  margin: 0px 180px;
 }
 
 p {
   font-size: 16px;
+}
+
+#compterPanier {
+  display: none;
+  background-color: #ff7d1a;
+  width: 17px;
+  height: 12px;
+  border-radius: 50%;
+  font-size: 10px;
+  text-align: center;
+  font-weight: 700;
+  color: white;
+  position: absolute;
+  top: 13px;
+  right: 100px;
 }
 
 header .nav-mobile {
@@ -27,9 +42,10 @@ header .nav-desktop {
       -ms-flex-align: center;
           align-items: center;
   border-bottom: 1px solid #e8e8ea;
+  position: relative;
 }
 
-header .nav-desktop :first-child {
+header .nav-desktop div:first-child {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -40,7 +56,7 @@ header .nav-desktop :first-child {
           align-items: center;
 }
 
-header .nav-desktop :first-child ul {
+header .nav-desktop div:first-child ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -49,20 +65,20 @@ header .nav-desktop :first-child ul {
   color: #68707d;
 }
 
-header .nav-desktop :first-child ul li {
+header .nav-desktop div:first-child ul li {
   border-bottom: 2px solid white;
   padding-bottom: 35px;
   padding-top: 35px;
 }
 
-header .nav-desktop :first-child ul li:hover {
+header .nav-desktop div:first-child ul li:hover {
   cursor: pointer;
   cursor: hand;
   border-bottom: 2px solid #ff7d1a;
   padding-bottom: 35px;
 }
 
-header :last-child {
+header .nav-desktop div:last-child {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -71,25 +87,122 @@ header :last-child {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: relative;
 }
 
-header :last-child #icon-cart {
+header .nav-desktop div:last-child #icon-cart {
   cursor: pointer;
   cursor: hand;
 }
 
-header :last-child #avatar {
+header .nav-desktop div:last-child #avatar {
   height: 50px;
+  border: 2px solid white;
   cursor: pointer;
   cursor: hand;
 }
 
-header :last-child #avatar:hover {
+header .nav-desktop div:last-child #avatar:hover {
   border: 2px solid #ff7d1a;
   border-radius: 50%;
 }
 
-main {
+header .basket {
+  display: none;
+  background-color: white;
+  -webkit-box-shadow: 1px 12px 29px -10px #68707d;
+          box-shadow: 1px 12px 29px -10px #68707d;
+  width: 24%;
+  position: absolute;
+  top: 80px;
+  right: 127px;
+  padding-bottom: 20px;
+  border-radius: 5%;
+  z-index: 2;
+}
+
+header .basket h2 {
+  font-size: 16px;
+  font-weight: 700;
+  padding: 20px;
+}
+
+header .basket hr {
+  border: 0.0095px solid #e8e8ea;
+  width: 100%;
+}
+
+header .basket #containerAchatBasket {
+  display: block;
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+}
+
+header .basket #containerAchatBasket #imgProductBascket {
+  display: inline-block;
+  width: 20%;
+  border-radius: 5%;
+}
+
+header .basket #containerAchatBasket #containerDetailleBasket {
+  margin: 8px 0;
+}
+
+header .basket #containerAchatBasket #containerDetailleBasket #nomProduit,
+header .basket #containerAchatBasket #containerDetailleBasket #prixProduitBasket,
+header .basket #containerAchatBasket #containerDetailleBasket #qProduitBasket {
+  text-transform: capitalize;
+  color: #68707d;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+header .basket #containerAchatBasket #containerDetailleBasket #prixTotal {
+  font-weight: 700;
+}
+
+header .basket #containerAchatBasket #containerDetailleBasket #icon-delete {
+  display: inline-block;
+  width: 16px;
+  height: 20px;
+  margin: auto 0;
+}
+
+header .basket #containerAchatBasket #checkoutBtn {
+  display: none !important;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 10px 60px;
+  background-color: #ff7d1a;
+  color: white;
+  border: none;
+  width: 90%;
+  height: 60px;
+  margin: 0 auto;
+}
+
+header .basket #containerAchatBasket #cartEmptyText {
+  display: none;
+  color: #68707d;
+  font-weight: 700;
+  text-align: center;
+  margin: 0 30px 30px 30px;
+}
+
+main .containerMain {
   margin: 80px 50px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -97,79 +210,63 @@ main {
   gap: 130px;
 }
 
-main article {
+main .containerMain article {
   -ms-flex-preferred-size: 40%;
       flex-basis: 40%;
 }
 
-main article :first-child .produitBig {
+main .containerMain article div:first-child .produitBig {
   width: 100%;
   margin-bottom: 20px;
   position: relative;
 }
 
-main article :first-child #btnPrevious,
-main article :first-child #bntNext {
-  padding: 11px;
-  background-color: white;
-  border-radius: 50%;
-  width: 12px;
-  height: 12px;
-  position: absolute;
-}
-
-main article :first-child #btnPrevious {
-  z-index: 2;
-  top: 400px;
-  right: 1300px;
-}
-
-main article :first-child #bntNext {
-  top: 400px;
-  right: 920px;
-}
-
-main article :last-child {
+main .containerMain article div:last-child {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   gap: 20px;
 }
 
-main article :last-child .produitLittle {
+main .containerMain article div:last-child .produitLittle {
   width: 25%;
+  border: 2px solid white;
 }
 
-main article :last-child .produitLittle:hover {
+main .containerMain article div:last-child .produitLittle:hover {
   cursor: pointer;
   cursor: hand;
+  border: 2px solid #ff7d1a;
+  opacity: 50%;
 }
 
-main article img {
+main .containerMain article img {
   border-radius: 5%;
 }
 
-main aside {
+main .containerMain aside {
   -ms-flex-preferred-size: 50%;
       flex-basis: 50%;
 }
 
-main aside h2 {
+main .containerMain aside h2 {
   color: #ff7d1a;
   text-transform: uppercase;
   font-size: 13px;
   margin-top: 50px;
 }
 
-main aside h1 {
+main .containerMain aside h1 {
   margin-top: 20px;
+  font-size: 43px;
 }
 
-main aside p {
+main .containerMain aside p {
   margin-top: 30px;
+  color: #68707d;
 }
 
-main aside #containerPrix div {
+main .containerMain aside #containerPrix div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -177,12 +274,12 @@ main aside #containerPrix div {
   gap: 15px;
 }
 
-main aside #containerPrix div #prix {
+main .containerMain aside #containerPrix div #prix {
   font-size: 25px;
   font-weight: 700;
 }
 
-main aside #containerPrix div #promo {
+main .containerMain aside #containerPrix div #promo {
   height: 20px;
   background-color: #ffede0;
   -ms-flex-item-align: initial;
@@ -196,7 +293,7 @@ main aside #containerPrix div #promo {
   margin-top: 4px;
 }
 
-main aside #containerPrix #prixOrig {
+main .containerMain aside #containerPrix #prixOrig {
   text-decoration: line-through;
   color: #68707d;
   padding-top: 10px;
@@ -206,7 +303,7 @@ main aside #containerPrix #prixOrig {
   color: #b6bcc8;
 }
 
-main aside #containerQPrix {
+main .containerMain aside #containerQPrix {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -214,9 +311,10 @@ main aside #containerQPrix {
   gap: 15px;
 }
 
-main aside #containerQPrix #containerQ {
+main .containerMain aside #containerQPrix #containerQ {
   background-color: #f7f8fd;
-  width: 20%;
+  width: 25%;
+  height: 60px;
   gap: 10px;
   border-radius: 5px;
   display: -webkit-box;
@@ -229,27 +327,27 @@ main aside #containerQPrix #containerQ {
           align-items: center;
   gap: 10px;
   font-weight: 700;
+  font-size: 16px;
 }
 
-main aside #containerQPrix #containerQ #plus,
-main aside #containerQPrix #containerQ #minus {
-  width: 10%;
-  height: 10%;
+main .containerMain aside #containerQPrix #containerQ #plus,
+main .containerMain aside #containerQPrix #containerQ #minus {
+  height: 30%;
   border-radius: 5px;
   padding: 10px;
 }
 
-main aside #containerQPrix #containerQ #plus:hover,
-main aside #containerQPrix #containerQ #minus:hover {
+main .containerMain aside #containerQPrix #containerQ #plus:hover,
+main .containerMain aside #containerQPrix #containerQ #minus:hover {
   cursor: pointer;
   cursor: hand;
 }
 
-main aside #containerQPrix #containerQ #plus {
-  height: 30%;
+main .containerMain aside #containerQPrix #containerQ #minus {
+  height: 10%;
 }
 
-main aside #containerQPrix #containerCart {
+main .containerMain aside #containerQPrix #addToCartBtn {
   border-radius: 5px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -261,6 +359,7 @@ main aside #containerQPrix #containerCart {
           align-items: center;
   gap: 10px;
   font-weight: 700;
+  font-size: 16px;
   padding: 10px 60px;
   background-color: #ff7d1a;
   color: white;
@@ -268,8 +367,116 @@ main aside #containerQPrix #containerCart {
           box-shadow: 1px 12px 29px -10px #ff7d1a;
 }
 
-main aside #containerQPrix #containerCart #addCart {
+main .containerMain aside #containerQPrix #addToCartBtn:hover {
+  cursor: pointer;
+  cursor: hand;
+}
+
+main .containerMain aside #containerQPrix #addToCartBtn #addCart {
   display: inline-block;
   border-radius: 5px;
+}
+
+main .detaille {
+  display: none;
+  margin: 0 !important;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 3;
+}
+
+main .detaille .containerDetalle {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  text-align: center;
+  padding-top: 150px;
+}
+
+main .detaille .containerDetalle div:first-child {
+  position: relative;
+}
+
+main .detaille .containerDetalle div:first-child .close {
+  text-align: right;
+  fill: white;
+  position: absolute;
+  top: -38px;
+  right: 570px;
+}
+
+main .detaille .containerDetalle div:first-child .close:hover {
+  cursor: pointer;
+  cursor: hand;
+  fill: #ff7d1a;
+}
+
+main .detaille .containerDetalle div:first-child #btnPrevious {
+  width: 17px;
+  padding: 15px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 40%;
+  left: 34.5%;
+  z-index: 2;
+}
+
+main .detaille .containerDetalle div:first-child #btnPrevious #btnPreviousArrow:hover {
+  cursor: pointer;
+  cursor: hand;
+  stroke: #ff7d1a;
+}
+
+main .detaille .containerDetalle div:first-child .produitBig {
+  width: 28%;
+  margin-bottom: 27px;
+  position: relative;
+}
+
+main .detaille .containerDetalle div:first-child #btnNext {
+  width: 17px;
+  padding: 15px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 40%;
+  right: 34.5%;
+  z-index: 2;
+}
+
+main .detaille .containerDetalle div:first-child #btnNext #bntNextArrow:hover {
+  cursor: pointer;
+  cursor: hand;
+  stroke: #ff7d1a;
+}
+
+main .detaille .containerDetalle div:last-child {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 30px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main .detaille .containerDetalle div:last-child .produitLittle {
+  width: 4.5%;
+  border: 2px solid rgba(0, 0, 0, 0);
+}
+
+main .detaille .containerDetalle div:last-child .produitLittle:hover {
+  cursor: pointer;
+  cursor: hand;
+  border: 2px solid #ff7d1a;
+  opacity: 50%;
+}
+
+main .detaille .containerDetalle img {
+  border-radius: 5%;
 }
 /*# sourceMappingURL=style.css.map */

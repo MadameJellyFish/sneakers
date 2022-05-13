@@ -1,239 +1,444 @@
-@import "_variables";
+     @import "_variables";
 
+     // bnt orange
+     @mixin btn {
+         border-radius: 5px;
+         display: flex;
+         justify-content: space-around;
+         align-items: center;
+         gap: 10px;
+         font-weight: $weightBold;
+         font-size: $fontSizeP;
+     }
 
-// bnt orange
-@mixin btn {
-    border-radius: 5px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    gap: 10px;
-    font-weight: $weightBold;
-}
+     @mixin btnOrange {
+         padding: 10px 60px;
+         background-color: $range;
+         color: $white;
+     }
 
+     //btn ronde img detaille
+     @mixin btnsImg {
+         width: 17px;
+         padding: 15px;
+         background-color: white;
+         border-radius: 50%;
+         position: absolute;
+         top: 40%;
+     }
 
-header {
-    .nav-mobile {
-        display: none;
-    }
-    .nav-desktop {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-bottom: 1px solid $lightGrayHr;
-        // padding-bottom: 30px;
+     @mixin bntDetailleHover {
+         cursor: pointer;
+         cursor: hand;
+     }
 
-        :first-child {
-            display: flex;
-            height: 9%;
-            gap: 50px;
-            align-items: center;
+     #compterPanier {
+         display: none;
+         background-color: $range;
+         width: 17px;
+         height: 12px;
+         border-radius: 50%;
+         font-size: 10px;
+         text-align: center;
+         font-weight: $weightBold;
+         color: $white;
+         position: absolute;
+         top: 13px;
+         right: 100px;
+     }
 
-            ul {
-                display: flex;
-                list-style-type: none;
-                gap: 30px;
-                color: $darkGrayishBlue;
-                //  j'ai mis aussi un border blanch pour gargder les memes messure avec le hover
-                li {
-                    border-bottom: 2px solid white;
-                    padding-bottom: 35px;
-                    padding-top: 35px;
+     header {
+         .nav-mobile {
+             display: none;
+         }
 
-                    &:hover {
-                        cursor: pointer;
-                        cursor: hand;
-                        border-bottom: 2px solid $range;
-                        padding-bottom: 35px;
+         .nav-desktop {
+             display: flex;
+             justify-content: space-between;
+             align-items: center;
+             border-bottom: 1px solid $lightGrayHr;
+             position: relative;
 
-                    }
+             div:first-child {
+                 display: flex;
+                 height: 9%;
+                 gap: 50px;
+                 align-items: center;
 
-                }
-            }
+                 ul {
+                     display: flex;
+                     list-style-type: none;
+                     gap: 30px;
+                     color: $darkGrayishBlue;
+
+                     //  j'ai mis aussi un border blanch pour gargder les memes messure avec le hover
+                     li {
+                         border-bottom: 2px solid white;
+                         padding-bottom: 35px;
+                         padding-top: 35px;
+
+                         &:hover {
+                             cursor: pointer;
+                             cursor: hand;
+                             border-bottom: 2px solid $range;
+                             padding-bottom: 35px;
+                         }
+                     }
+                 }
+             }
+
+             div:last-child {
+                 display: flex;
+                 height: 100%;
+                 gap: 50px;
+                 align-items: center;
+                 position: relative;
+
+                 // icon panier btn menu
+                 #icon-cart {
+                     cursor: pointer;
+                     cursor: hand;
+                 }
+
+                 // avatar btn menu
+                 #avatar {
+                     height: 50px;
+                     border: 2px solid $white;
+                     cursor: pointer;
+                     cursor: hand;
+
+                     &:hover {
+                         border: 2px solid $range;
+                         border-radius: 50%;
+                     }
+                 }
+             }
+         }
+
+         // box emergent basket
+         .basket {
+             display: none;
+             background-color: $white;
+             box-shadow: 1px 12px 29px -10px $darkGrayishBlue;
+             width: 24%;
+             position: absolute;
+             top: 80px;
+             right: 127px;
+             padding-bottom: 20px;
+             border-radius: 5%;
+             z-index: 2;
+
+             h2 {
+                 font-size: 16px;
+                 font-weight: 700;
+                 padding: 20px;
+             }
+
+             hr {
+                 border: 0.0095px solid $lightGrayHr;
+                 width: 100%;
+             }
+
+             #containerAchatBasket {
+                 display: block;
+                 padding: 20px;
+                 display: flex;
+                 gap: 20px;
+
+                 #imgProductBascket {
+                     display: inline-block;
+                     width: 20%;
+                     border-radius: 5%;
+                 }
+
+                 #containerDetailleBasket {
+                     margin: 8px 0;
+
+                     #nomProduit,
+                     #prixProduitBasket,
+                     #qProduitBasket {
+                         text-transform: capitalize;
+                         color: $darkGrayishBlue;
+                         display: inline-block;
+                         margin-bottom: 10px;
+                     }
+
+                    //  #pour {}
+
+                     #prixTotal {
+                         font-weight: $weightBold;
+                     }
+
+                     #icon-delete {
+                         display: inline-block;
+                         width: 16px;
+                         height: 20px;
+                         margin: auto 0;
+                     }
+
+                     // cette paragraph est le texte votre panier est vide
+                 }
+
+                 #checkoutBtn {
+                     display: none !important;
+                     @include btn();
+                     @include btnOrange();
+                     border: none;
+                     width: 90%;
+                     height: 60px;
+                     margin: 0 auto;
+                 }
+
+                 #cartEmptyText {
+                     display: none;
+                     color: $darkGrayishBlue;
+                     font-weight: $weightBold;
+                     text-align: center;
+                     margin: 0 30px 30px 30px;
+                 }
+             }
+         }
         }
-    }
-
-    :last-child {
-        display: flex;
-        height: 100%;
-        gap: 50px;
-        align-items: center;
-
-        #icon-cart {
-            cursor: pointer;
-            cursor: hand;
-        }
-
-        #avatar {
-            height: 50px;
-            cursor: pointer;
-            cursor: hand;
-
-            &:hover {
-                border: 2px solid $range;
-                border-radius: 50%;
-            }
-        }
-    }
-}
 
 
-// main
-main {
-    margin: 80px 50px;
-    display: flex;
-    gap: 130px;
+         // main
+         main {
+             .containerMain {
+                 margin: 80px 50px;
+                 display: flex;
+                 gap: 130px;
 
-    article {
-        flex-basis: 40%;
+                 article {
+                     // display: none;
+                     flex-basis: 40%;
 
-        :first-child {
-            .produitBig {
-                width: 100%;
-                margin-bottom: 20px;
-                position: relative;
-            }
+                     div:first-child {
+                         .produitBig {
+                             width: 100%;
+                             margin-bottom: 20px;
+                             position: relative;
+                         }
+                     }
 
-            #btnPrevious,
-            #bntNext {
-                padding: 11px;
-                background-color: $white;
-                border-radius: 50%;
-                width: 12px;
-                height: 12px;
-                position: absolute;
-            }
+                     div:last-child {
+                         display: flex;
+                         gap: 20px;
 
-            #btnPrevious {
-                z-index: 2;
-                top: 400px;
-                right: 1300px;
-            }
+                         .produitLittle {
+                             width: 25%;
+                             border: 2px solid $white;
 
-            #bntNext {
-                top: 400px;
-                right: 920px;
-            }
-        }
+                             &:hover {
+                                 cursor: pointer;
+                                 cursor: hand;
+                                 border: 2px solid $range;
+                                 opacity: 50%;
+                             }
+                         }
+                     }
 
+                     img {
+                         border-radius: 5%;
+                     }
+                 }
 
-        :last-child {
-            display: flex;
-            gap: 20px;
+                 aside {
+                     flex-basis: 50%;
 
-            .produitLittle {
-                width: 25%;
+                     h2 {
+                         color: $range;
+                         text-transform: uppercase;
+                         font-size: $fontSizeSTitles;
+                         margin-top: 50px;
+                     }
 
-                &:hover {
-                    cursor: pointer;
-                    cursor: hand;
-                }
-            }
-        }
+                     h1 {
+                         margin-top: 20px;
+                         font-size: 43px;
+                     }
 
-        img {
-            border-radius: 5%;
-        }
-    }
+                     p {
+                         margin-top: 30px;
+                         color: $darkGrayishBlue;
+                     }
 
-    aside {
-        flex-basis: 50%;
+                     #containerPrix {
+                         div {
+                             display: flex;
+                             margin-top: 25px;
+                             gap: 15px;
 
-        h2 {
-            color: $range;
-            text-transform: uppercase;
-            font-size: $fontSizeSTitles;
-            margin-top: 50px;
-        }
+                             #prix {
+                                 font-size: 25px;
+                                 font-weight: $weightBold;
+                             }
 
-        h1 {
-            margin-top: 20px;
-        }
+                             #promo {
+                                 height: 20px;
+                                 background-color: $paleOrange;
+                                 align-self: initial;
+                                 padding: 3px 7px 0 7px;
+                                 color: $range;
+                                 font-size: $fontSizeSTitles;
+                                 font-weight: $weightBold;
+                                 border-radius: 5px;
+                                 margin-top: 4px;
+                             }
+                         }
 
-        p {
-            margin-top: 30px;
-        }
+                         #prixOrig {
+                             text-decoration: line-through;
+                             color: $darkGrayishBlue;
+                             padding-top: 10px;
+                             display: inline-block;
+                             font-size: $fontSizeSTitles;
+                             font-weight: $weightBold;
+                             color: $grayishBlue;
+                         }
+                     }
 
-        #containerPrix {
+                     #containerQPrix {
+                         display: flex;
+                         margin-top: 30px;
+                         gap: 15px;
 
-            div {
-                display: flex;
-                margin-top: 25px;
-                gap: 15px;
+                         #containerQ {
+                             background-color: $lightGrayishBlue;
+                             width: 25%;
+                             height: 60px;
+                             gap: 10px;
+                             @include btn();
 
-                #prix {
-                    font-size: 25px;
-                    font-weight: $weightBold;
-                }
+                             #plus,
+                             #minus {
+                                 // width: 10%;
+                                 // height: 10%;
+                                 height: 30%;
+                                 border-radius: 5px;
+                                 padding: 10px;
 
-                #promo {
-                    height: 20px;
-                    background-color: $paleOrange;
-                    align-self: initial;
-                    padding: 3px 7px 0 7px;
-                    color: $range;
-                    font-size: $fontSizeSTitles;
-                    font-weight: $weightBold;
-                    border-radius: 5px;
-                    margin-top: 4px;
-                }
-            }
+                                 &:hover {
+                                     cursor: pointer;
+                                     cursor: hand;
+                                 }
+                             }
 
-            #prixOrig {
-                text-decoration: line-through;
-                color: $darkGrayishBlue;
-                padding-top: 10px;
-                display: inline-block;
-                font-size: $fontSizeSTitles;
-                font-weight: $weightBold;
-                color: $grayishBlue;
-            }
-        }
+                             #minus {
+                                 // height: 30%;
+                                 // width: 10%;
+                                 height: 10%;
+                             }
+                         }
 
-        #containerQPrix {
-            display: flex;
-            margin-top: 30px;
-            gap: 15px;
+                         //icone panier
+                         #addToCartBtn {
+                             @include btn();
+                             @include btnOrange();
+                             box-shadow: 1px 12px 29px -10px $range;
 
-            #containerQ {
-                background-color: $lightGrayishBlue;
-                width: 20%;
-                gap: 10px;
-                @include btn();
+                             &:hover {
+                                 cursor: pointer;
+                                 cursor: hand;
+                             }
 
-                #plus,
-                #minus {
-                    width: 10%;
-                    height: 10%;
-                    border-radius: 5px;
-                    padding: 10px;
+                             #addCart {
+                                 display: inline-block;
+                                 border-radius: 5px;
+                             }
+                         }
+                     }
+                 }
+             }
 
-                    &:hover {
-                        cursor: pointer;
-                        cursor: hand;
-                    }
-                }
+             // detaille grande fond gris
+             .detaille {
+                 display: none;
+                 margin: 0 !important;
+                 position: absolute;
+                 top: 0px;
+                 left: 0px;
+                 height: 100vh;
+                 width: 100%;
+                 background-color: rgba(0, 0, 0, 0.8);
+                 z-index: 3;
 
-                #plus {
-                    height: 30%;
-                }
+                 .containerDetalle {
+                     flex-basis: 100%;
+                     text-align: center;
+                     padding-top: 150px;
 
+                     div:first-child {
+                         position: relative;
 
-            }
+                         .close {
+                             text-align: right;
+                             fill: $white;
+                             position: absolute;
+                             top: -38px;
+                             right: 570px;
 
-            #containerCart {
-                @include btn();
-                padding: 10px 60px;
-                background-color: $range;
-                color: $white;
-                box-shadow: 1px 12px 29px -10px $range;
+                             &:hover {
+                                 @include bntDetailleHover();
+                                 fill: $range;
+                             }
+                         }
 
-                #addCart {
-                    display: inline-block;
-                    border-radius: 5px;
+                         #btnPrevious {
+                             @include btnsImg();
+                             left: 34.5%;
+                             z-index: 2;
 
-                }
-            }
-        }
-    }
-}
+                             #btnPreviousArrow {
+                                 &:hover {
+                                     @include bntDetailleHover();
+                                     stroke: $range;
+                                 }
+                             }
+                         }
+
+                         .produitBig {
+                             width: 28%;
+                             margin-bottom: 27px;
+                             position: relative;
+                         }
+
+                         #btnNext {
+                             @include btnsImg();
+                             right: 34.5%;
+                             z-index: 2;
+
+                             #bntNextArrow {
+                                 &:hover {
+                                     @include bntDetailleHover();
+                                     stroke: $range;
+                                 }
+                             }
+                         }
+                     }
+
+                     div:last-child {
+                         display: flex;
+                         gap: 30px;
+                         justify-content: center;
+
+                         .produitLittle {
+                             width: 4.5%;
+                             border: 2px solid rgba(black, 0);
+
+                             &:hover {
+                                 cursor: pointer;
+                                 cursor: hand;
+                                 border: 2px solid $range;
+                                 opacity: 50%;
+                             }
+                         }
+                     }
+
+                     img {
+                         border-radius: 5%;
+                     }
+                 }
+             }
+         }
+     
+
