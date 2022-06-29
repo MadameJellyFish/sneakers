@@ -1,444 +1,478 @@
-     @import "_variables";
+@import "_variables";
 
-     // bnt orange
-     @mixin btn {
-         border-radius: 5px;
-         display: flex;
-         justify-content: space-around;
-         align-items: center;
-         gap: 10px;
-         font-weight: $weightBold;
-         font-size: $fontSizeP;
-     }
+// bnt orange
+@mixin btn {
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 10px;
+  font-weight: $weightBold;
+  font-size: $fontSizeP;
+}
 
-     @mixin btnOrange {
-         padding: 10px 60px;
-         background-color: $range;
-         color: $white;
-     }
+@mixin btnOrange {
+  padding: 10px 60px;
+  background-color: $range;
+  color: $white;
+}
 
-     //btn ronde img detaille
-     @mixin btnsImg {
-         width: 17px;
-         padding: 15px;
-         background-color: white;
-         border-radius: 50%;
-         position: absolute;
-         top: 40%;
-     }
+//btn ronde img detaille
+@mixin btnsImg {
+  width: 17px;
+  padding: 15px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 40%;
+}
 
-     @mixin bntDetailleHover {
-         cursor: pointer;
-         cursor: hand;
-     }
+@mixin bntDetailleHover {
+  cursor: pointer;
+  cursor: hand;
+}
 
-     #compterPanier {
-         display: none;
-         background-color: $range;
-         width: 17px;
-         height: 12px;
-         border-radius: 50%;
-         font-size: 10px;
-         text-align: center;
-         font-weight: $weightBold;
-         color: $white;
-         position: absolute;
-         top: 13px;
-         right: 100px;
-     }
+#compterPanier {
+  // display: none;
+  background-color: $range;
+  width: 17px;
+  height: 12px;
+  border-radius: 50%;
+  font-size: 10px;
+  text-align: center;
+  font-weight: $weightBold;
+  color: $white;
+  position: absolute;
+  top: 13px;
+  right: 100px;
+}
 
-     header {
-         .nav-mobile {
-             display: none;
-         }
+.show{
+  display: inline-block;
+}
+.hide{
+  display: none;
+}
+.toggle{
+  display: none;
+}
 
-         .nav-desktop {
-             display: flex;
-             justify-content: space-between;
-             align-items: center;
-             border-bottom: 1px solid $lightGrayHr;
-             position: relative;
+header {
+  .nav-mobile {
+    display: none;
+  }
 
-             div:first-child {
-                 display: flex;
-                 height: 9%;
-                 gap: 50px;
-                 align-items: center;
+  .nav-desktop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid $lightGrayHr;
+    position: relative;
 
-                 ul {
-                     display: flex;
-                     list-style-type: none;
-                     gap: 30px;
-                     color: $darkGrayishBlue;
+    div:first-child {
+      display: flex;
+      height: 9%;
+      gap: 50px;
+      align-items: center;
 
-                     //  j'ai mis aussi un border blanch pour gargder les memes messure avec le hover
-                     li {
-                         border-bottom: 2px solid white;
-                         padding-bottom: 35px;
-                         padding-top: 35px;
+      ul {
+        display: flex;
+        list-style-type: none;
+        gap: 30px;
+        color: $darkGrayishBlue;
 
-                         &:hover {
-                             cursor: pointer;
-                             cursor: hand;
-                             border-bottom: 2px solid $range;
-                             padding-bottom: 35px;
-                         }
-                     }
-                 }
-             }
+        //  j'ai mis aussi un border blanch pour gargder les memes messure avec le hover
+        li {
+          border-bottom: 2px solid white;
+          padding-bottom: 35px;
+          padding-top: 35px;
 
-             div:last-child {
-                 display: flex;
-                 height: 100%;
-                 gap: 50px;
-                 align-items: center;
-                 position: relative;
+          &:hover {
+            cursor: pointer;
+            cursor: hand;
+            border-bottom: 2px solid $range;
+            padding-bottom: 35px;
+          }
+        }
+      }
+    }
 
-                 // icon panier btn menu
-                 #icon-cart {
-                     cursor: pointer;
-                     cursor: hand;
-                 }
+    div:last-child {
+      display: flex;
+      height: 100%;
+      gap: 50px;
+      align-items: center;
+      position: relative;
 
-                 // avatar btn menu
-                 #avatar {
-                     height: 50px;
-                     border: 2px solid $white;
-                     cursor: pointer;
-                     cursor: hand;
+      // icon panier btn menu
+      #icon-cart {
+        cursor: pointer;
+        cursor: hand;
+      }
 
-                     &:hover {
-                         border: 2px solid $range;
-                         border-radius: 50%;
-                     }
-                 }
-             }
-         }
+      // avatar btn menu
+      #avatar {
+        height: 50px;
+        border: 2px solid $white;
+        cursor: pointer;
+        cursor: hand;
 
-         // box emergent basket
-         .basket {
-             display: none;
-             background-color: $white;
-             box-shadow: 1px 12px 29px -10px $darkGrayishBlue;
-             width: 24%;
-             position: absolute;
-             top: 80px;
-             right: 127px;
-             padding-bottom: 20px;
-             border-radius: 5%;
-             z-index: 2;
+        &:hover {
+          border: 2px solid $range;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
 
-             h2 {
-                 font-size: 16px;
-                 font-weight: 700;
-                 padding: 20px;
-             }
+  // box emergent basket
+  .basket {
+    background-color: $white;
+    box-shadow: 1px 12px 29px -10px $darkGrayishBlue;
+    width: 24%;
+    position: absolute;
+    top: 80px;
+    right: 127px;
+    padding-bottom: 20px;
+    border-radius: 5%;
+    z-index: 2;
 
-             hr {
-                 border: 0.0095px solid $lightGrayHr;
-                 width: 100%;
-             }
+    h2 {
+      font-size: 16px;
+      font-weight: 700;
+      padding: 20px;
+    }
 
-             #containerAchatBasket {
-                 display: block;
-                 padding: 20px;
-                 display: flex;
-                 gap: 20px;
+    hr {
+      border: 0.0095px solid $lightGrayHr;
+      width: 100%;
+    }
 
-                 #imgProductBascket {
-                     display: inline-block;
-                     width: 20%;
-                     border-radius: 5%;
-                 }
+    #containerAchatBasket {
+      // display: none;
+      padding: 20px;
 
-                 #containerDetailleBasket {
-                     margin: 8px 0;
+      // button chech out panier navbar
+      #checkoutBtn {
+        @include btn();
+        @include btnOrange();
+        // box-shadow: 1px 12px 29px -10px $range;
+        border: none;
+        width: 100%;
+        height: 60px;
 
-                     #nomProduit,
-                     #prixProduitBasket,
-                     #qProduitBasket {
-                         text-transform: capitalize;
-                         color: $darkGrayishBlue;
-                         display: inline-block;
-                         margin-bottom: 10px;
-                     }
+        &:hover {
+          cursor: pointer;
+          cursor: hand;
+        }
+      }
 
-                    //  #pour {}
+      #imgProductBascket {
+        display: inline-block;
+        width: 20%;
+        border-radius: 5%;
+      }
 
-                     #prixTotal {
-                         font-weight: $weightBold;
-                     }
+      #containerDetailleBasket {
+        margin: 8px 0;
 
-                     #icon-delete {
-                         display: inline-block;
-                         width: 16px;
-                         height: 20px;
-                         margin: auto 0;
-                     }
-
-                     // cette paragraph est le texte votre panier est vide
-                 }
-
-                 #checkoutBtn {
-                     display: none !important;
-                     @include btn();
-                     @include btnOrange();
-                     border: none;
-                     width: 90%;
-                     height: 60px;
-                     margin: 0 auto;
-                 }
-
-                 #cartEmptyText {
-                     display: none;
-                     color: $darkGrayishBlue;
-                     font-weight: $weightBold;
-                     text-align: center;
-                     margin: 0 30px 30px 30px;
-                 }
-             }
-         }
+        #moneda {
+          color: $darkGrayishBlue;
         }
 
+        #nomProduit,
+        #prixProduitBasket,
+        #qProduitBasket {
+          text-transform: capitalize;
+          color: $darkGrayishBlue;
+          display: inline-block;
+          margin-bottom: 10px;
+        }
 
-         // main
-         main {
-             .containerMain {
-                 margin: 80px 50px;
-                 display: flex;
-                 gap: 130px;
+        #pour {
+          color: $darkGrayishBlue;
+        }
 
-                 article {
-                     // display: none;
-                     flex-basis: 40%;
+        #prixTotal {
+          font-weight: $weightBold;
+        }
 
-                     div:first-child {
-                         .produitBig {
-                             width: 100%;
-                             margin-bottom: 20px;
-                             position: relative;
-                         }
-                     }
+        .money {
+          font-weight: $weightBold;
+        }
+      }
+    }
 
-                     div:last-child {
-                         display: flex;
-                         gap: 20px;
+    #AchatBasket {
+      display: flex;
+      gap: 15px;
+      padding-bottom: 20px;
+    }
 
-                         .produitLittle {
-                             width: 25%;
-                             border: 2px solid $white;
+    #icon-delete {
+      display: inline-block;
+      width: 16px;
+      height: 20px;
+      margin: auto 0;
 
-                             &:hover {
-                                 cursor: pointer;
-                                 cursor: hand;
-                                 border: 2px solid $range;
-                                 opacity: 50%;
-                             }
-                         }
-                     }
+      &:hover {
+        cursor: pointer;
+        cursor: hand;
+      }
+    }
+  }
 
-                     img {
-                         border-radius: 5%;
-                     }
-                 }
+  // cette paragraph est le texte votre panier est vide
+  #cartEmptyText {
+    color: $darkGrayishBlue;
+    font-weight: $weightBold;
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}
 
-                 aside {
-                     flex-basis: 50%;
+// main
+main {
+  .containerMain {
+    margin: 80px 50px;
+    display: flex;
+    gap: 130px;
 
-                     h2 {
-                         color: $range;
-                         text-transform: uppercase;
-                         font-size: $fontSizeSTitles;
-                         margin-top: 50px;
-                     }
+    article {
+      // display: none;
+      flex-basis: 40%;
 
-                     h1 {
-                         margin-top: 20px;
-                         font-size: 43px;
-                     }
+      div:first-child {
+        .produitBig {
+          width: 100%;
+          margin-bottom: 20px;
+          position: relative;
+        }
+      }
 
-                     p {
-                         margin-top: 30px;
-                         color: $darkGrayishBlue;
-                     }
+      div:last-child {
+        display: flex;
+        gap: 20px;
 
-                     #containerPrix {
-                         div {
-                             display: flex;
-                             margin-top: 25px;
-                             gap: 15px;
+        .produitLittle {
+          width: 25%;
+          border: 2px solid $white;
 
-                             #prix {
-                                 font-size: 25px;
-                                 font-weight: $weightBold;
-                             }
+          &:hover {
+            cursor: pointer;
+            cursor: hand;
+            border: 2px solid $range;
+            opacity: 50%;
+          }
+        }
+      }
 
-                             #promo {
-                                 height: 20px;
-                                 background-color: $paleOrange;
-                                 align-self: initial;
-                                 padding: 3px 7px 0 7px;
-                                 color: $range;
-                                 font-size: $fontSizeSTitles;
-                                 font-weight: $weightBold;
-                                 border-radius: 5px;
-                                 margin-top: 4px;
-                             }
-                         }
+      img {
+        border-radius: 5%;
+      }
+    }
 
-                         #prixOrig {
-                             text-decoration: line-through;
-                             color: $darkGrayishBlue;
-                             padding-top: 10px;
-                             display: inline-block;
-                             font-size: $fontSizeSTitles;
-                             font-weight: $weightBold;
-                             color: $grayishBlue;
-                         }
-                     }
+    aside {
+      flex-basis: 50%;
 
-                     #containerQPrix {
-                         display: flex;
-                         margin-top: 30px;
-                         gap: 15px;
+      h2 {
+        color: $range;
+        text-transform: uppercase;
+        font-size: $fontSizeSTitles;
+        margin-top: 50px;
+      }
 
-                         #containerQ {
-                             background-color: $lightGrayishBlue;
-                             width: 25%;
-                             height: 60px;
-                             gap: 10px;
-                             @include btn();
+      h1 {
+        margin-top: 20px;
+        font-size: 43px;
+      }
 
-                             #plus,
-                             #minus {
-                                 // width: 10%;
-                                 // height: 10%;
-                                 height: 30%;
-                                 border-radius: 5px;
-                                 padding: 10px;
+      p {
+        margin-top: 30px;
+        color: $darkGrayishBlue;
+      }
 
-                                 &:hover {
-                                     cursor: pointer;
-                                     cursor: hand;
-                                 }
-                             }
+      #containerPrix {
+        div {
+          display: flex;
+          margin-top: 25px;
+          gap: 15px;
 
-                             #minus {
-                                 // height: 30%;
-                                 // width: 10%;
-                                 height: 10%;
-                             }
-                         }
+          #prix {
+            font-size: 25px;
+            font-weight: $weightBold;
+          }
 
-                         //icone panier
-                         #addToCartBtn {
-                             @include btn();
-                             @include btnOrange();
-                             box-shadow: 1px 12px 29px -10px $range;
+          #dolar {
+            font-size: 25px;
+            font-weight: $weightBold;
+          }
 
-                             &:hover {
-                                 cursor: pointer;
-                                 cursor: hand;
-                             }
+          #promo {
+            height: 20px;
+            background-color: $paleOrange;
+            align-self: initial;
+            padding: 3px 7px 0 7px;
+            color: $range;
+            font-size: $fontSizeSTitles;
+            font-weight: $weightBold;
+            border-radius: 5px;
+            margin-top: 4px;
+          }
+        }
 
-                             #addCart {
-                                 display: inline-block;
-                                 border-radius: 5px;
-                             }
-                         }
-                     }
-                 }
-             }
+        #prixOrig {
+          text-decoration: line-through;
+          color: $darkGrayishBlue;
+          padding-top: 10px;
+          display: inline-block;
+          font-size: $fontSizeSTitles;
+          font-weight: $weightBold;
+          color: $grayishBlue;
+        }
+      }
 
-             // detaille grande fond gris
-             .detaille {
-                 display: none;
-                 margin: 0 !important;
-                 position: absolute;
-                 top: 0px;
-                 left: 0px;
-                 height: 100vh;
-                 width: 100%;
-                 background-color: rgba(0, 0, 0, 0.8);
-                 z-index: 3;
+      #containerQPrix {
+        display: flex;
+        margin-top: 30px;
+        gap: 15px;
 
-                 .containerDetalle {
-                     flex-basis: 100%;
-                     text-align: center;
-                     padding-top: 150px;
+        #containerQ {
+          background-color: $lightGrayishBlue;
+          width: 25%;
+          height: 60px;
+          gap: 10px;
+          @include btn();
 
-                     div:first-child {
-                         position: relative;
+          #plus,
+          #minus {
+            // width: 10%;
+            // height: 10%;
+            height: 30%;
+            border-radius: 5px;
+            padding: 10px;
 
-                         .close {
-                             text-align: right;
-                             fill: $white;
-                             position: absolute;
-                             top: -38px;
-                             right: 570px;
+            &:hover {
+              cursor: pointer;
+              cursor: hand;
+            }
+          }
 
-                             &:hover {
-                                 @include bntDetailleHover();
-                                 fill: $range;
-                             }
-                         }
+          #minus {
+            // height: 30%;
+            // width: 10%;
+            height: 10%;
+          }
+        }
 
-                         #btnPrevious {
-                             @include btnsImg();
-                             left: 34.5%;
-                             z-index: 2;
+        //icone panier
+        #addToCartBtn {
+          @include btn();
+          @include btnOrange();
+          box-shadow: 1px 12px 29px -10px $range;
 
-                             #btnPreviousArrow {
-                                 &:hover {
-                                     @include bntDetailleHover();
-                                     stroke: $range;
-                                 }
-                             }
-                         }
+          &:hover {
+            cursor: pointer;
+            cursor: hand;
+          }
 
-                         .produitBig {
-                             width: 28%;
-                             margin-bottom: 27px;
-                             position: relative;
-                         }
+          #addCart {
+            display: inline-block;
+            border-radius: 5px;
+          }
+        }
+      }
+    }
+  }
 
-                         #btnNext {
-                             @include btnsImg();
-                             right: 34.5%;
-                             z-index: 2;
+  // detaille grande fond gris
+  .detaille {
+    display: none;
+    margin: 0 !important;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 3;
 
-                             #bntNextArrow {
-                                 &:hover {
-                                     @include bntDetailleHover();
-                                     stroke: $range;
-                                 }
-                             }
-                         }
-                     }
+    .containerDetalle {
+      flex-basis: 100%;
+      text-align: center;
+      padding-top: 150px;
 
-                     div:last-child {
-                         display: flex;
-                         gap: 30px;
-                         justify-content: center;
+      div:first-child {
+        position: relative;
 
-                         .produitLittle {
-                             width: 4.5%;
-                             border: 2px solid rgba(black, 0);
+        .close {
+          text-align: right;
+          fill: $white;
+          position: absolute;
+          top: -38px;
+          right: 570px;
 
-                             &:hover {
-                                 cursor: pointer;
-                                 cursor: hand;
-                                 border: 2px solid $range;
-                                 opacity: 50%;
-                             }
-                         }
-                     }
+          &:hover {
+            @include bntDetailleHover();
+            fill: $range;
+          }
+        }
 
-                     img {
-                         border-radius: 5%;
-                     }
-                 }
-             }
-         }
-     
+        #btnPrevious {
+          @include btnsImg();
+          left: 34.5%;
+          z-index: 2;
 
+          #btnPreviousArrow {
+            &:hover {
+              @include bntDetailleHover();
+              stroke: $range;
+            }
+          }
+        }
+
+        .produitBig {
+          width: 28%;
+          margin-bottom: 27px;
+          position: relative;
+        }
+
+        #btnNext {
+          @include btnsImg();
+          right: 34.5%;
+          z-index: 2;
+
+          #bntNextArrow {
+            &:hover {
+              @include bntDetailleHover();
+              stroke: $range;
+            }
+          }
+        }
+      }
+
+      div:last-child {
+        display: flex;
+        gap: 30px;
+        justify-content: center;
+
+        .produitLittle {
+          width: 4.5%;
+          border: 2px solid rgba(black, 0);
+
+          &:hover {
+            cursor: pointer;
+            cursor: hand;
+            border: 2px solid $range;
+            opacity: 50%;
+          }
+        }
+      }
+
+      img {
+        border-radius: 5%;
+      }
+    }
+  }
+}

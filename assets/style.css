@@ -13,7 +13,6 @@ p {
 }
 
 #compterPanier {
-  display: none;
   background-color: #ff7d1a;
   width: 17px;
   height: 12px;
@@ -25,6 +24,18 @@ p {
   position: absolute;
   top: 13px;
   right: 100px;
+}
+
+.show {
+  display: inline-block;
+}
+
+.hide {
+  display: none;
+}
+
+.toggle {
+  display: none;
 }
 
 header .nav-mobile {
@@ -108,7 +119,6 @@ header .nav-desktop div:last-child #avatar:hover {
 }
 
 header .basket {
-  display: none;
   background-color: white;
   -webkit-box-shadow: 1px 12px 29px -10px #68707d;
           box-shadow: 1px 12px 29px -10px #68707d;
@@ -133,46 +143,10 @@ header .basket hr {
 }
 
 header .basket #containerAchatBasket {
-  display: block;
   padding: 20px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 20px;
-}
-
-header .basket #containerAchatBasket #imgProductBascket {
-  display: inline-block;
-  width: 20%;
-  border-radius: 5%;
-}
-
-header .basket #containerAchatBasket #containerDetailleBasket {
-  margin: 8px 0;
-}
-
-header .basket #containerAchatBasket #containerDetailleBasket #nomProduit,
-header .basket #containerAchatBasket #containerDetailleBasket #prixProduitBasket,
-header .basket #containerAchatBasket #containerDetailleBasket #qProduitBasket {
-  text-transform: capitalize;
-  color: #68707d;
-  display: inline-block;
-  margin-bottom: 10px;
-}
-
-header .basket #containerAchatBasket #containerDetailleBasket #prixTotal {
-  font-weight: 700;
-}
-
-header .basket #containerAchatBasket #containerDetailleBasket #icon-delete {
-  display: inline-block;
-  width: 16px;
-  height: 20px;
-  margin: auto 0;
 }
 
 header .basket #containerAchatBasket #checkoutBtn {
-  display: none !important;
   border-radius: 5px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -189,17 +163,76 @@ header .basket #containerAchatBasket #checkoutBtn {
   background-color: #ff7d1a;
   color: white;
   border: none;
-  width: 90%;
+  width: 100%;
   height: 60px;
-  margin: 0 auto;
 }
 
-header .basket #containerAchatBasket #cartEmptyText {
-  display: none;
+header .basket #containerAchatBasket #checkoutBtn:hover {
+  cursor: pointer;
+  cursor: hand;
+}
+
+header .basket #containerAchatBasket #imgProductBascket {
+  display: inline-block;
+  width: 20%;
+  border-radius: 5%;
+}
+
+header .basket #containerAchatBasket #containerDetailleBasket {
+  margin: 8px 0;
+}
+
+header .basket #containerAchatBasket #containerDetailleBasket #moneda {
+  color: #68707d;
+}
+
+header .basket #containerAchatBasket #containerDetailleBasket #nomProduit,
+header .basket #containerAchatBasket #containerDetailleBasket #prixProduitBasket,
+header .basket #containerAchatBasket #containerDetailleBasket #qProduitBasket {
+  text-transform: capitalize;
+  color: #68707d;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+header .basket #containerAchatBasket #containerDetailleBasket #pour {
+  color: #68707d;
+}
+
+header .basket #containerAchatBasket #containerDetailleBasket #prixTotal {
+  font-weight: 700;
+}
+
+header .basket #containerAchatBasket #containerDetailleBasket .money {
+  font-weight: 700;
+}
+
+header .basket #AchatBasket {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 15px;
+  padding-bottom: 20px;
+}
+
+header .basket #icon-delete {
+  display: inline-block;
+  width: 16px;
+  height: 20px;
+  margin: auto 0;
+}
+
+header .basket #icon-delete:hover {
+  cursor: pointer;
+  cursor: hand;
+}
+
+header #cartEmptyText {
   color: #68707d;
   font-weight: 700;
   text-align: center;
-  margin: 0 30px 30px 30px;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 main .containerMain {
@@ -275,6 +308,11 @@ main .containerMain aside #containerPrix div {
 }
 
 main .containerMain aside #containerPrix div #prix {
+  font-size: 25px;
+  font-weight: 700;
+}
+
+main .containerMain aside #containerPrix div #dolar {
   font-size: 25px;
   font-weight: 700;
 }
