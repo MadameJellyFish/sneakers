@@ -33,7 +33,6 @@
 }
 
 #compterPanier {
-  // display: none;
   background-color: $range;
   width: 17px;
   height: 12px;
@@ -47,14 +46,20 @@
   right: 100px;
 }
 
-.show{
+.show {
   display: inline-block;
 }
-.hide{
+
+.hide {
   display: none;
 }
-.toggle{
+
+.toggle {
   display: none;
+}
+
+.active {
+  display: block;
 }
 
 header {
@@ -89,7 +94,6 @@ header {
 
           &:hover {
             cursor: pointer;
-            cursor: hand;
             border-bottom: 2px solid $range;
             padding-bottom: 35px;
           }
@@ -176,7 +180,7 @@ header {
       #containerDetailleBasket {
         margin: 8px 0;
 
-        #moneda {
+        .simbol {
           color: $darkGrayishBlue;
         }
 
@@ -193,7 +197,7 @@ header {
           color: $darkGrayishBlue;
         }
 
-        #prixTotal {
+        .total {
           font-weight: $weightBold;
         }
 
@@ -207,19 +211,29 @@ header {
       display: flex;
       gap: 15px;
       padding-bottom: 20px;
+
     }
 
-    #icon-delete {
-      display: inline-block;
-      width: 16px;
-      height: 20px;
-      margin: auto 0;
+    #delete-btn {
+      border: none !important;
+      background-color: transparent;
+      position: relative;
 
-      &:hover {
-        cursor: pointer;
-        cursor: hand;
+      #icon-delete {
+        display: inline-block;
+        width: 16px;
+        height: 20px;
+        margin: auto 0;
+        position: absolute;
+        top: 35px;
       }
     }
+
+    &:hover {
+      cursor: pointer;
+      cursor: hand;
+    }
+
   }
 
   // cette paragraph est le texte votre panier est vide
@@ -393,7 +407,7 @@ main {
     position: absolute;
     top: 0px;
     left: 0px;
-    height: 100vh;
+    height: 118vh;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.8);
     z-index: 3;
@@ -411,7 +425,7 @@ main {
           fill: $white;
           position: absolute;
           top: -38px;
-          right: 570px;
+          right: 639px;
 
           &:hover {
             @include bntDetailleHover();

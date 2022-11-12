@@ -73,12 +73,23 @@
               id="imgProductBascket"
             />
             <div id="containerDetailleBasket">
-              <span id="nomProduit">Fall Limited Edition Sneakers</span><br />
-               <span id="moneda">$</span><span id="prixProduitBasket"> </span>
-              <span id="pour"> x </span><span id="qProduitBasket"> </span
-              ><span class="money"> $</span><span id="prixTotal"> </span>
+              <span id="nomProduit">Fall Limited Edition Sneakers</span>
+              <br />
+              <span class="simbol">$</span>
+              <span id="prixProduitBasket"></span>
+              <span class="simbol">x</span>
+              <span id="pour"></span>
+              <span id="qProduitBasket" class="total"> Total</span>
+              <span class="money">$</span>
+              <span id="prixTotal" class="total"></span>
             </div>
-            <img src="/images/icon-delete.svg" alt="" id="icon-delete" />
+            <button id="delete-btn">
+              <img
+                src="/images/icon-delete.svg"
+                id="icon-delete"
+                alt="delete"
+              />
+            </button>
           </div>
           <button id="checkoutBtn">Checkout</button>
         </div>
@@ -90,10 +101,15 @@
       <div class="containerMain">
         <article>
           <div>
-            <!-- <img src="/images/icon-previous.svg" id="btnPrevious" alt=""> -->
-            <img src="/images/image-product-1.jpg" class="produitBig active" id="imgOverlay"alt="" />
-            <!-- <img src="/images/icon-next.svg" id="bntNext" alt=""> -->
+            <!-- Grande image -->
+            <img
+              src="/images/image-product-1.jpg"
+              class="produitBig active"
+              id="imgOverlay"
+              alt=""
+            />
           </div>
+            <!-- Petites images -->
           <div>
             <img
               src="/images/image-product-1-thumbnail.jpg"
@@ -127,8 +143,10 @@
           </p>
           <div id="containerPrix">
             <div>
-            <span id="dolar">$</span>
-              <span id="prix">125.00</span><span id="promo">50%</span></div>
+              <span id="dolar">$</span>
+              <span id="prix">125.00</span>
+              <span id="promo">50%</span>
+            </div>
             <span id="prixOrig">250.00</span>
           </div>
           <div id="containerQPrix">
@@ -155,7 +173,7 @@
         </aside>
       </div>
 
-      {# box gris zoom basket#}
+      <!--box gris zoom basket#-->
       <article class="detaille">
         <div class="containerDetalle">
           <div>
@@ -189,7 +207,12 @@
               />
             </svg>
 
-            <img src="/images/image-product-1.jpg" class="produitBig" id="produitBig" alt="" />
+            <img
+              src="/images/image-product-1.jpg"
+              class="produitBig"
+              id="produitBig"
+              alt=""
+            />
 
             <svg
               width="13"

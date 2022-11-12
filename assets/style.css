@@ -38,6 +38,10 @@ p {
   display: none;
 }
 
+.active {
+  display: block;
+}
+
 header .nav-mobile {
   display: none;
 }
@@ -84,7 +88,6 @@ header .nav-desktop div:first-child ul li {
 
 header .nav-desktop div:first-child ul li:hover {
   cursor: pointer;
-  cursor: hand;
   border-bottom: 2px solid #ff7d1a;
   padding-bottom: 35px;
 }
@@ -182,7 +185,7 @@ header .basket #containerAchatBasket #containerDetailleBasket {
   margin: 8px 0;
 }
 
-header .basket #containerAchatBasket #containerDetailleBasket #moneda {
+header .basket #containerAchatBasket #containerDetailleBasket .simbol {
   color: #68707d;
 }
 
@@ -199,7 +202,7 @@ header .basket #containerAchatBasket #containerDetailleBasket #pour {
   color: #68707d;
 }
 
-header .basket #containerAchatBasket #containerDetailleBasket #prixTotal {
+header .basket #containerAchatBasket #containerDetailleBasket .total {
   font-weight: 700;
 }
 
@@ -215,14 +218,22 @@ header .basket #AchatBasket {
   padding-bottom: 20px;
 }
 
-header .basket #icon-delete {
+header .basket #delete-btn {
+  border: none !important;
+  background-color: transparent;
+  position: relative;
+}
+
+header .basket #delete-btn #icon-delete {
   display: inline-block;
   width: 16px;
   height: 20px;
   margin: auto 0;
+  position: absolute;
+  top: 35px;
 }
 
-header .basket #icon-delete:hover {
+header .basket:hover {
   cursor: pointer;
   cursor: hand;
 }
@@ -421,7 +432,7 @@ main .detaille {
   position: absolute;
   top: 0px;
   left: 0px;
-  height: 100vh;
+  height: 118vh;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.8);
   z-index: 3;
@@ -443,7 +454,7 @@ main .detaille .containerDetalle div:first-child .close {
   fill: white;
   position: absolute;
   top: -38px;
-  right: 570px;
+  right: 639px;
 }
 
 main .detaille .containerDetalle div:first-child .close:hover {

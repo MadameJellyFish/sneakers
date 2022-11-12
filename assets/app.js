@@ -31,9 +31,10 @@ let prixTotal = document.querySelector('#prixTotal');
 let prixProduitBasket = document.querySelector('#prixProduitBasket');
 
 let prix = document.querySelector('#prix');
+let pour = document.querySelector('#pour');
 let prixOrig = document.querySelector('#prixOrig');
 
-let iconDelete = document.querySelector('#icon-delete');
+let iconDelete = document.querySelector('#delete-btn');
 
 
 
@@ -51,13 +52,15 @@ function displayCompterPanier() {
 
     // calcule(prixProduitBasket);
     let nb1 = parseFloat(prix.innerText);
-    let qnb2 = parseInt(qProduitBasket.innerText);
+    let qnb2 = parseFloat(compterGnrl.innerText);
     let rslt = parseFloat(prixTotal.innerText);
-
+    pour.innerText = compterGnrl.innerText;
     if (rslt = nb1 * qnb2) {
         prixTotal.innerText = rslt;
         prixProduitBasket.innerText = nb1;
     };
+//   voir la quantite des produits dans la panier
+    console.log(compterGnrl)
 }
 
 function updateCartDisplay() {
@@ -113,16 +116,25 @@ item.addEventListener('click', changeItem)
 // changer l'image avec zoom
 function changeItem (){
 // console.log(this.src);
-
 // con replace cambie la foto pequena por la grande, cambio la terminacion del nombre con replace
 imgOverlay.src=this.src.replace("-thumbnail", '');
 }
 
 
-//modal images zoom
-let close= document.querySelector('.close');
+//modal
+// images zoom
 let btnPrevious = document.querySelector('#btnPrevious');
 let btnNext = document.querySelector('#btnNext');
+btnPrevious.addEventListener('click', goLeft)
+function goLeft(){
+    
+}
+//close button
+let close= document.querySelector('.close');
+close.addEventListener('click', getClose);
+function getClose(){
+    detaille.style.display='none';
+}
 
 
 
